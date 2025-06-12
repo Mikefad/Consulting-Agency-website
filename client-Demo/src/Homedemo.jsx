@@ -64,14 +64,14 @@ const Homedemopage = () => {
     <main>
     <section id="intro" className="relative overflow-hidden pt-20">
       {/* Hero Content */}
-      <div className="relative flex flex-col lg:flex-row items-start lg:items-center px-4 pt-24 lg:pt-36 lg:pl-36 max-w-7xl mx-auto text-left text-black z-10 gap-8">
+      <div className="relative flex flex-col lg:flex-row items-start lg:items-center px-4 pt-24 lg:pt-26 lg:pl-36 max-w-7xl mx-auto text-left text-black z-10 gap-8">
         
         {/* Text Block */}
         <div className="flex-1">
           <h1 className="text-gray-200 mb-2 text-base sm:text-lg lg:text-xl font-semibold">
             Building the future of the web, one pixel at a time.
           </h1>
-          <p className="text-blue-500 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-md mb-4">
+          <p className="text-blue-500 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-lg mb-4">
             Find the right consultant for your project needs.
           </p>
         </div>
