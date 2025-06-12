@@ -64,14 +64,14 @@ const Homedemopage = () => {
     <main>
     <section id="intro" className="relative overflow-hidden pt-20">
       {/* Hero Content */}
-      <div className="relative flex flex-col lg:flex-row items-start lg:items-center px-4 pt-24 lg:pt-26 lg:pl-36 max-w-7xl mx-auto text-left text-black z-10 gap-8">
+      <div className="relative flex flex-col lg:flex-row items-start lg:items-center px-4 pt-24 lg:pt-36 lg:pl-36 max-w-7xl mx-auto text-left text-black z-10 gap-8">
         
         {/* Text Block */}
         <div className="flex-1">
           <h1 className="text-gray-200 mb-2 text-base sm:text-lg lg:text-xl font-semibold">
             Building the future of the web, one pixel at a time.
           </h1>
-          <p className="text-blue-500 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4">
+          <p className="text-blue-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Find the right consultant for your project needs.
           </p>
         </div>
@@ -79,10 +79,10 @@ const Homedemopage = () => {
         {/* Button Block */}
         <div className="flex flex-col items-start lg:mt-[150px]">
           <div className="flex flex-row gap-4 m-4">
-            <button className="bg-blue-700 hover:bg-blue-800 h-[50px] w-full sm:w-[145px] text-white font-semibold py-2 px-3 sm:px-6 shadow-md transition-all duration-300">
+            <button className="bg-blue-700 hover:bg-blue-800 h-[46px] w-full sm:w-[145px] text-white font-semibold py-2 px-3 sm:px-6 shadow-md transition-all duration-300">
               For Clients
             </button>
-            <button className="bg-gray-200 hover:bg-gray-300 h-[50px] w-full sm:w-[145px] text-gray-900 font-semibold py-2 px-3 text-nowrap sm:px-6 shadow-md transition-all duration-300">
+            <button className="bg-gray-200 hover:bg-gray-300 h-[46px] w-full sm:w-[145px] text-gray-900 font-semibold py-2 px-3 text-nowrap sm:px-6 shadow-md transition-all duration-300">
               For Experts
             </button>
           </div>
