@@ -71,7 +71,7 @@ const Homedemopage = () => {
           <h1 className="text-gray-200 mb-2 text-base sm:text-lg lg:text-xl font-semibold">
             Building the future of the web, one pixel at a time.
           </h1>
-          <p className="text-blue-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          <p className="text-blue-500 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-md mb-4">
             Find the right consultant for your project needs.
           </p>
         </div>
