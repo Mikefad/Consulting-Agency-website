@@ -64,7 +64,7 @@ const Homedemopage = () => {
     <main>
     <section id="intro" className="relative overflow-hidden pt-20">
       {/* Hero Content */}
-      <div className="relative flex flex-col lg:flex-row items-start lg:items-center px-4 pt-24 lg:pt-36 lg:pl-36 max-w-7xl mx-auto text-left text-black z-10 gap-8">
+      <div className="relative flex flex-col lg:flex-row items-start lg:items-center px-4 pt-24 lg:pt-26 lg:pl-36 max-w-7xl mx-auto text-left text-black z-10 gap-8">
         
         {/* Text Block */}
         <div className="flex-1">
