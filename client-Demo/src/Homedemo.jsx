@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import cityvid from './assets/21985-323496013_small.mp4';
+import cityvid from './assets/istockphoto-1319925053-640_adpp_is.mp4';
 import plant from './assets/3679565.jpg';
 import individuals from './assets/campaign-creators-gMsnXqILjp4-unsplash.jpg';
 import consulting from './assets/istockphoto-2167817669-1024x1024.jpg';
@@ -33,10 +33,10 @@ const Homedemopage = () => {
     return(
     <>
 
-    <header className={`sticky top-0 z-50 px-4 lg:px-8 shadow-md shadow-gray-700 transition-colors duration-300 ${isScrolled ? "bg-[#181823]" : "bg-transparent"}`}>
-    <div className="flex items-center justify-between py-4">
+    <header className={`sticky top-0 z-50 px-4 lg:px-8  transition-colors duration-300 ${isScrolled ? "bg-[#181823]" : "bg-transparent"}`}>
+    <div className="flex items-center justify-between max-w-7xl mx-auto px-7 py-4">
         {/* Logo */}
-        <div className="text-blue-500 text-3xl lg:text-5xl font-bold cursor-pointer">
+        <div className="text-[#e3edff] text-3xl lg:text-5xl font-bold cursor-pointer">
         ℳdev
         </div>
 
@@ -61,33 +61,34 @@ const Homedemopage = () => {
     <source src={cityvid} type="video/mp4" />
     </video>
 
+    <div className="absolute top-0 left-0 w-full h-screen bg-black/50 -z-10"></div>
+
     <main>
     <section id="intro" className="relative overflow-hidden pt-20">
       {/* Hero Content */}
-      <div className="relative flex flex-col lg:flex-row items-start lg:items-center px-4 pt-24 lg:pt-26 lg:pl-36 max-w-7xl mx-auto text-left text-black z-10 gap-8">
+      <div className="relative flex flex-col-reverse lg:flex-row items-center px-4 pt-24 lg:pt-32 lg:px-36 max-w-7xl mx-auto z-10 gap-12">
         
-        {/* Text Block */}
-        <div className="flex-1">
-          <h1 className="text-gray-200 mb-2 text-base sm:text-lg lg:text-xl font-semibold">
-            Building the future of the web, one pixel at a time.
-          </h1>
-          <p className="text-blue-500 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-lg mb-4">
-            Find the right consultant for your project needs.
-          </p>
-        </div>
+        {/* Left: Text Content */}
+        <div className="flex-1 text-left max-w-2xl">
 
-        {/* Button Block */}
-        <div className="flex flex-col items-start lg:mt-[150px]">
-          <div className="flex flex-row gap-4 m-4">
-            <button className="bg-blue-700 hover:bg-blue-800 h-[46px] w-full sm:w-[145px] text-white font-semibold py-2 px-3 sm:px-6 shadow-md transition-all duration-300">
+          <h1 className="text-gray-200 font-lg text-4xl sm:text-5xl md:text-5xl leading-tight mb-7">
+            Find the right consultant for your project needs.
+          </h1>
+
+          <p className="text-gray-400 mb-8 text-lg sm:text-[15px] font-md uppercase tracking-wide">
+          Seek Alpha Consulting connects clients with vetted subject matter experts—Advisors—from our global professional network. 
+          </p>
+          
+          <div className="flex flex-row gap-4">
+            <button className="border border-gray-200 hover:bg-blue-800 text-white font-semibold py-2 px-6 shadow transition-all duration-300">
               For Clients
             </button>
-            <button className="bg-gray-200 hover:bg-gray-300 h-[46px] w-full sm:w-[145px] text-gray-900 font-semibold py-2 px-3 text-nowrap sm:px-6 shadow-md transition-all duration-300">
+            <button className="border border-gray-200 hover:bg-gray-300 text-gray-200 font-semibold py-2 px-6 shadow transition-all duration-300">
               For Experts
             </button>
           </div>
         </div>
-      </div>
+        </div>
 
       <hr className="mx-auto mt-20 w-1/2 border-black" />
     </section>
@@ -98,12 +99,12 @@ const Homedemopage = () => {
     <section id="portfolio" className="py-18 bg-gray-50">
       <div className="container mx-auto px-4" ref={ref}>
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-blue-500 max-w-4xl mx-auto text-center text-4xl font-bold mb-4">
+          <h1 className="text-[#164793] max-w-4xl mx-auto text-center text-4xl font-bold mb-4">
             Access the best management consultants and digital experts through our platform
           </h1>
 
-          <h2 className="text-lg text-gray-700 text-center mb-10">
-          Seek Alpha Consulting connects clients with vetted subject matter experts—Advisors—from our global professional network. Our clients leverage the insights and perspectives shared by our Advisors to stay informed and make better business decisions.
+          <h2 className="text-lg text-black text-center mb-10">
+          Seek Alpha Consulting connects clients with vetted subject matter experts—Advisors—from our global professional network. Our clients leverage the insights and perspectives shared by our Advisors. 
           </h2>
           <hr className="w-14 h-[2px] bg-black mx-auto mb-10" />
 
@@ -113,7 +114,7 @@ const Homedemopage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
+              className="bg-[#f0f5ff] p-6 rounded-lg shadow-md border border-gray-100"
             >
               <h3 className="text-xl text-blue-800 font-semibold mb-2 text-center">Top Consultants</h3>
               <ul className="text-gray-700">
@@ -134,7 +135,7 @@ const Homedemopage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
+              className="bg-[#f0f5ff] p-6 rounded-lg shadow-md border border-gray-100"
             >
               <h3 className="text-xl text-blue-800 font-semibold mb-2 text-center">Client-focused service</h3>
               <ul className="text-gray-700">
@@ -157,7 +158,7 @@ const Homedemopage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
+              className="bg-[#f0f5ff] p-6 rounded-lg shadow-md border border-gray-100"
             >
               <h3 className="text-xl text-blue-800 font-semibold mb-2 text-center">Quality Assurance</h3>
               <ul className="text-gray-700">
@@ -180,7 +181,45 @@ const Homedemopage = () => {
       </div>
     </section>
 
-    <section id="portfolio" class="py-16 bg-gray-50">
+    <section id="products" className="relative bg-[#b4ccff] py-20">
+  
+      {/* Section Heading - now outside of container */}
+      <div className="absolute top-0 left-1/4 transform -translate-x-1/2  mb-16">
+        <h2 className="text-4xl font-bold text-center text-gray-900 bg-white w-[170px] h-[60px]">Products</h2>
+      </div>
+
+
+      <div className="max-w-7xl mx-auto px-4 lg:px-36">
+
+        {/* Product Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          
+          {/* Product 1 */}
+          <div className="flex flex-col items-center text-center px-4">
+            <h3 className="text-xl font-semibold mb-2">Product Title 1</h3>
+            <p className="text-gray-600">Brief description about this product and how it provides value.</p>
+          </div>
+
+          {/* Product 2 */}
+          <div className="flex flex-col items-center text-center px-4">
+            <h3 className="text-xl font-semibold mb-2">Product Title 2</h3>
+            <p className="text-gray-600">Another short description that reflects what this product offers.</p>
+          </div>
+
+          {/* Product 3 */}
+          <div className="flex flex-col items-center text-center px-4">
+            <h3 className="text-xl font-semibold mb-2">Product Title 3</h3>
+            <p className="text-gray-600">Small blurb explaining the use case or benefit of this product.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="portfolio" class="py-16 bg-[#e3edff]">
+      
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
             <h1 class="text-blue-500 text-5xl text-center font-bold mb-4">How it works?</h1>
