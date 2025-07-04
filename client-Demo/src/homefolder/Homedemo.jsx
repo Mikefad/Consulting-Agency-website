@@ -48,13 +48,25 @@ const Homedemopage = () => {
 
     const videoRef = useRef();
 
-    useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // 4 seconds
+    const waitForVideos = () => {
+    const videos = Array.from(document.querySelectorAll("video"));
 
-    return () => clearTimeout(timer);
-  }, []);
+    return Promise.all(
+      videos.map(video => {
+        if (video.readyState >= 4) return Promise.resolve();
+        return new Promise((res, rej) => {
+          const onReady = () => {
+            video.removeEventListener("canplaythrough", onReady);
+            video.removeEventListener("error", rej);
+            res();
+          };
+          video.addEventListener("canplaythrough", onReady, { once: true });
+          video.addEventListener("error", rej, { once: true });
+        });
+      })
+    );
+  };
+
 
 
 
@@ -115,11 +127,14 @@ const Homedemopage = () => {
       autoPlay
       loop
       muted
-      className="absolute top-0 left-0 w-full h-screen object-cover -z-10"
+      preload="auto"
+      className={`absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-500 ${
+        isLoading ? "opacity-0" : "opacity-100"
+      }`}
     >
       <source src={cityvid} type="video/mp4" />
-      
     </video>
+
       
     {/* Blue overlay with nice transparency */}
     <div className="absolute top-0 left-0 w-full h-screen bg-blue-900/50 -z-10 mix-blend-multiply"></div>
