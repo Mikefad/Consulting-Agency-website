@@ -122,17 +122,18 @@ const Homedemopage = () => {
     <Header/>
     
     {/* Background Video - placed right below header */}
+
     <video
+      id="vid2"
       autoPlay
       loop
       muted
-      className={`absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700 ${
-        isLoading ? "opacity-0" : "opacity-100"
-      }`}
+      className="absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700"
       onLoadedData={() => setVideoLoaded(true)}
-    >
+      >
       <source src={cityvid} type="video/mp4" />
-    </video>
+      </video>
+    
 
 
 
