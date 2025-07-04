@@ -51,7 +51,7 @@ const Homedemopage = () => {
     useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000); // 4 seconds
+    }, 6000); // 4 seconds
 
     return () => clearTimeout(timer);
   }, []);
