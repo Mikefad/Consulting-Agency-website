@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       
-      <ScrollToTop />
+      
       <Scrollingup/>
       <Routes>
       <Route path="/" element={<Homedemopage/>} />
