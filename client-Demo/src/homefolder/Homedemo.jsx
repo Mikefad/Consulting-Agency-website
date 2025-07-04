@@ -128,6 +128,7 @@ const Homedemopage = () => {
       autoPlay
       loop
       muted
+      playsinline
       className="absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700"
       onLoadedData={() => setVideoLoaded(true)}
       >
