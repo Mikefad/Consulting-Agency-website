@@ -46,29 +46,65 @@ const Homedemopage = () => {
     
     const [isLoading, setIsLoading] = useState(true);
 
-        useEffect(() => {
-      const loadAssets = () =>
-        Promise.all([
-          new Promise(res => {
-            const img = new Image();
-            img.src = logo4;
-            img.onload = res;
-          }),
-          new Promise(res => {
-            const vid = document.createElement('video');
-            vid.src = cityvid;
-            vid.onloadeddata = res;
-          }),
-        ]);
+    const videoRef = useRef();
 
-      loadAssets()
-        .then(() => setIsLoading(false))
-        .catch(() => setIsLoading(false)); // fallback on failure
+    useEffect(() => {
+  let resolved = false;
 
-      const timeout = setTimeout(() => setIsLoading(false), 6000); // fallback
+  const waitForImages = () => {
+    const images = Array.from(document.images); // all <img> in DOM
 
-      return () => clearTimeout(timeout);
-    }, []);
+    return Promise.all(
+      images.map(img => {
+        if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
+        return new Promise((res, rej) => {
+          img.onload = res;
+          img.onerror = rej;
+        });
+      })
+    );
+  };
+
+  const waitForVideos = () => {
+    const videos = Array.from(document.querySelectorAll("video")); // all <video> in DOM
+
+    return Promise.all(
+      videos.map(video => {
+        if (video.readyState >= 3) return Promise.resolve();
+        return new Promise((res, rej) => {
+          const onReady = () => {
+            video.removeEventListener("loadeddata", onReady);
+            video.removeEventListener("error", rej);
+            res();
+          };
+          video.addEventListener("loadeddata", onReady);
+          video.addEventListener("error", rej);
+        });
+      })
+    );
+  };
+
+  const timeout = setTimeout(() => {
+    if (!resolved) setIsLoading(false);
+  }, 8000); // optional fallback
+
+  Promise.all([waitForImages(), waitForVideos()])
+    .then(() => {
+      resolved = true;
+      clearTimeout(timeout);
+      setIsLoading(false);
+    })
+    .catch(() => {
+      resolved = true;
+      clearTimeout(timeout);
+      setIsLoading(false); // even on error, allow fallback
+    });
+
+  return () => clearTimeout(timeout);
+}, []);
+
+
+
 
     
 
@@ -122,6 +158,7 @@ const Homedemopage = () => {
     
     {/* Background Video - placed right below header */}
     <video
+      ref={videoRef}
       autoPlay
       loop
       muted
