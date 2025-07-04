@@ -5,7 +5,8 @@ import AboutUsPage from './sericefolder/Service.jsx';
 import ServicesPage from './Blog.jsx';
 import ContactPage from './contact.jsx';
 import { Route, Routes, useLocation, useNavigate} from 'react-router-dom';
-import ScrollToTop from './scrolltotop.js';
+import ScrollToTop from './ScrollToTop';
+
 
 function App() {
   const [count, setCount] = useState(0)
