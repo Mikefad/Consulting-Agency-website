@@ -13,7 +13,7 @@ import logo2 from "../assets/Black_White_Minimalist_Simple_Monogram_Typography_L
 import logo3 from "../assets/Black_White_Minimalist_Simple_Monogram_Typography_Logo__3_-removebg-preview.png";
 
 import CountUp from "react-countup";
-import cityvid from "../assets/57860-486852732_small.mp4";
+import cityvid from "../assets/57860-486852732_small (1).mp4";
 
 import arrow from "../assets/focus-on-results.png";
 import pie from "../assets/pie-chart.png";
