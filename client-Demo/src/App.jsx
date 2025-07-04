@@ -5,7 +5,7 @@ import AboutUsPage from './sericefolder/Service.jsx';
 import ServicesPage from './Blog.jsx';
 import ContactPage from './contact.jsx';
 import { Route, Routes, useLocation, useNavigate} from 'react-router-dom';
-import ScrollToTop from './ScrollToTop';
+import Scrollingup from './Scrolling.js';
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
     <>
       
       <ScrollToTop />
+      <Scrollingup/>
       <Routes>
       <Route path="/" element={<Homedemopage/>} />
       <Route path="/services" element={<AboutUsPage/>} />
