@@ -13,7 +13,7 @@ import logo2 from "../assets/Black_White_Minimalist_Simple_Monogram_Typography_L
 import logo3 from "../assets/Black_White_Minimalist_Simple_Monogram_Typography_Logo__3_-removebg-preview.png";
 
 import CountUp from "react-countup";
-import cityvid from "../assets/57860-486852732_small (1).mp4";
+import cityvid from "public/57860-486852732_small (1).mp4";
 
 import arrow from "../assets/focus-on-results.png";
 import pie from "../assets/pie-chart.png";
@@ -122,6 +122,7 @@ const Homedemopage = () => {
     <Header/>
     
     {/* Background Video - placed right below header */}
+    
 
     <video
       id="vid2"
@@ -129,6 +130,7 @@ const Homedemopage = () => {
       loop
       muted
       playsinline
+      preload="auto"
       className="absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700"
       onLoadedData={() => setVideoLoaded(true)}
       >
