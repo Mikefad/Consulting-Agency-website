@@ -45,33 +45,33 @@ const Homedemopage = () => {
 
     
     const [isLoading, setIsLoading] = useState(true);
+    const [videoLoaded, setVideoLoaded] = useState(false);
+    const [imagesLoaded, setImagesLoaded] = useState(false);
 
-    const videoRef = useRef();
-
-    const waitForVideos = () => {
-    const videos = Array.from(document.querySelectorAll("video"));
-
-    return Promise.all(
-      videos.map(video => {
-        if (video.readyState >= 4) return Promise.resolve();
-        return new Promise((res, rej) => {
-          const onReady = () => {
-            video.removeEventListener("canplaythrough", onReady);
-            video.removeEventListener("error", rej);
-            res();
-          };
-          video.addEventListener("canplaythrough", onReady, { once: true });
-          video.addEventListener("error", rej, { once: true });
+    // Wait for all <img> tags in the DOM
+    useEffect(() => {
+      const images = Array.from(document.images);
+      const promises = images.map((img) => {
+        if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
+        return new Promise((res) => {
+          img.onload = res;
+          img.onerror = res; // still resolve even if some images fail
         });
-      })
-    );
-  };
+      });
 
+      Promise.all(promises).then(() => setImagesLoaded(true));
+    }, []);
 
+    // When both video and images are loaded (or timeout hits), hide loader
+    useEffect(() => {
+      const timeout = setTimeout(() => setIsLoading(false), 6000); // fallback
+      if (videoLoaded && imagesLoaded) {
+        clearTimeout(timeout);
+        setIsLoading(false);
+      }
+      return () => clearTimeout(timeout);
+    }, [videoLoaded, imagesLoaded]);
 
-
-
-    
 
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -123,17 +123,18 @@ const Homedemopage = () => {
     
     {/* Background Video - placed right below header */}
     <video
-      ref={videoRef}
       autoPlay
       loop
       muted
-      preload="auto"
-      className={`absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-500 ${
+      className={`absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700 ${
         isLoading ? "opacity-0" : "opacity-100"
       }`}
+      onLoadedData={() => setVideoLoaded(true)}
     >
       <source src={cityvid} type="video/mp4" />
     </video>
+
+
 
       
     {/* Blue overlay with nice transparency */}
