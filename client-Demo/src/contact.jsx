@@ -29,34 +29,29 @@ const ContactPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     
     useEffect(() => {
-        
-        const timer = setTimeout(() => {
-        setIsLoading(false);
-        }, 2000); 
+    const loadAssets = () =>
+        Promise.all([
+        new Promise(res => {
+            const img = new Image();
+            img.src = logo4;
+            img.onload = res;
+        }),
+        new Promise(res => {
+            const vid = document.createElement('video');
+            vid.src = cityvid;
+            vid.onloadeddata = res;
+        }),
+        ]);
 
-        return () => clearTimeout(timer);
+    loadAssets()
+        .then(() => setIsLoading(false))
+        .catch(() => setIsLoading(false)); // fallback on failure
+
+    const timeout = setTimeout(() => setIsLoading(false), 6000); // fallback
+
+    return () => clearTimeout(timeout);
     }, []);
 
-    useEffect(() => {
-    if (isLoading) {
-        document.body.style.overflow = 'hidden';
-        document.body.style.height = '100vh';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-    } else {
-        document.body.style.overflow = '';
-        document.body.style.height = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-    }
-
-    return () => {
-        document.body.style.overflow = '';
-        document.body.style.height = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-    };
-    }, [isLoading]);
 
 
   return (
