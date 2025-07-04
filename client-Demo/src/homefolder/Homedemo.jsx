@@ -13,7 +13,7 @@ import logo2 from "../assets/Black_White_Minimalist_Simple_Monogram_Typography_L
 import logo3 from "../assets/Black_White_Minimalist_Simple_Monogram_Typography_Logo__3_-removebg-preview.png";
 
 import CountUp from "react-countup";
-import cityvid from "public/57860-486852732_small (1).mp4";
+
 
 import arrow from "../assets/focus-on-results.png";
 import pie from "../assets/pie-chart.png";
@@ -134,7 +134,7 @@ const Homedemopage = () => {
       className="absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700"
       onLoadedData={() => setVideoLoaded(true)}
       >
-      <source src={cityvid} type="video/mp4" />
+      <source src="/57860-486852732_small (1).mp4" type="video/mp4" />
       </video>
     
 
