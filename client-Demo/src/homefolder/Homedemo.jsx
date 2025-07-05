@@ -14,7 +14,6 @@ import logo3 from "../assets/Black_White_Minimalist_Simple_Monogram_Typography_L
 
 import CountUp from "react-countup";
 
-
 import arrow from "../assets/focus-on-results.png";
 import pie from "../assets/pie-chart.png";
 import groupsmile from "../assets/istockphoto-2094337698-1024x1024.jpg";
@@ -122,21 +121,17 @@ const Homedemopage = () => {
     <Header/>
     
     {/* Background Video - placed right below header */}
-    
 
     <video
-      id="vid2"
+      src="https://res.cloudinary.com/dcbk2d6pl/video/upload/v1751722259/57860-486852732_small_to2aou.mp4"
       autoPlay
-      loop
       muted
-      playsinline
-      preload="auto"
+      loop
+      playsInline
       className="absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700"
-      onLoadedData={() => setVideoLoaded(true)}
-      >
-      <source src="/57860-486852732_small (1).mp4" type="video/mp4" />
-      </video>
-    
+      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+    />
+
 
 
 
