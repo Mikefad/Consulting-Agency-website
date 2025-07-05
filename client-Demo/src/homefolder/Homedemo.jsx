@@ -63,7 +63,7 @@ const Homedemopage = () => {
 
     // When both video and images are loaded (or timeout hits), hide loader
     useEffect(() => {
-      const timeout = setTimeout(() => setIsLoading(false), 6000); // fallback
+      const timeout = setTimeout(() => setIsLoading(false), 7000); // fallback
       if (videoLoaded && imagesLoaded) {
         clearTimeout(timeout);
         setIsLoading(false);
@@ -130,7 +130,12 @@ const Homedemopage = () => {
       playsInline
       className="absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700"
       style={{ width: "100%", height: "100%", objectFit: "cover" }}
-      onLoadedData={() => setVideoLoaded(true)}
+      onLoadedData={() => {
+        setTimeout(() => {
+          setVideoLoaded(true);
+        }, 200); // add a tiny delay to ensure video is painted
+      }}
+
     />
 
 
