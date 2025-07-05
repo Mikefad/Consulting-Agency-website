@@ -6,6 +6,7 @@ import logo from './assets/logo_no_text2.png';
 import logo2 from './assets/cropped_logo_2.png';
 
 
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -57,7 +58,7 @@ return (
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-          className="md:hidden p-2 rounded-full hover:bg-gray-700 transition-colors"
+          className="md:hidden p-2 rounded-full text-[#e3edff] hover:bg-gray-700 transition-colors"
         >
           {isMobileNavOpen ? <X size={24} /> : <Menu size={24} />}
         </motion.button>

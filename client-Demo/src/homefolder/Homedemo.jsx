@@ -130,6 +130,7 @@ const Homedemopage = () => {
       playsInline
       className="absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700"
       style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      onLoadedData={() => setVideoLoaded(true)}
     />
 
 
@@ -137,7 +138,7 @@ const Homedemopage = () => {
 
       
     {/* Blue overlay with nice transparency */}
-    <div className="absolute top-0 left-0 w-full h-screen bg-blue-900/50 -z-10 mix-blend-multiply"></div>
+    <div className="absolute top-0 left-0 w-full h-screen bg-purple-50 -z-10 mix-blend-multiply"></div>
       
     <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-black to-transparent transform translate-y-40 z-20" />
     <main >
