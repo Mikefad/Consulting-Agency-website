@@ -240,10 +240,12 @@ const ServicesPage = () => {
                 <button className="bg-[#702963] text-white px-6 py-2 rounded-xl hover:bg-blue-800 transition">Learn More</button>
             </div>
             <div
+                
                 className="w-full md:w-1/2 h-[400px] bg-cover bg-center rounded-xl shadow-md"
-                style={{ backgroundImage: `url(${teamPhoto})` }}
+                style={{ backgroundImage: `url(https://res.cloudinary.com/dcbk2d6pl/image/upload/f_auto,q_auto,w_1200/v1751818360/top-view-people-working-with-laptops_pfdvuu.jpg)` }}
             />
             </div>
+            
         </section>
 
         {/* Solutions Section */}

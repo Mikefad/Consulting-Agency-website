@@ -180,7 +180,8 @@ const ContactPage = () => {
             )}
 
       {/* Hero */}
-      <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${contactImage2})` }}>
+      <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(https://res.cloudinary.com/dcbk2d6pl/image/upload/f_auto,q_auto,w_1200/v1751818400/business-team-watching-discussing-project-presentation_rbmx41.jpg
+)` }}>
         <div className="absolute inset-0 bg-gradient-to-r from-purple-100/80 to-purple-00/60" />
         <div className="relative z-10 h-full flex items-center justify-center">
           <h1 className="text-[#702963] text-5xl font-extrabold drop-shadow-xl">Let’s Talk</h1>

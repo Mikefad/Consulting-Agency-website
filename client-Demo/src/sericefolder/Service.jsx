@@ -320,13 +320,18 @@ const AboutUsPage = () => {
                 </div>
 
                 {/* Right Section: Image */}
+                
                 <div
                 className="hidden md:block w-full md:w-1/2 bg-cover bg-center relative z-0"
-                style={{ backgroundImage: `url(${teamPhoto})` }}
+                style={{
+                    backgroundImage: `url(https://res.cloudinary.com/dcbk2d6pl/image/upload/f_auto,q_auto,w_1200/v1751818250/samson-ZGjbiukp_-A-unsplash_u79r8o.jpg
+)`
+                }}
                 >
-                {/* Optional: Overlay for the image to make text more readable if you decide to put text here */}
+                {/* Optional: Overlay */}
                 {/* <div className="absolute inset-0 bg-blue-900/40"></div> */}
                 </div>
+
             </div>
 
             <main className="py-20 bg-gray-50">

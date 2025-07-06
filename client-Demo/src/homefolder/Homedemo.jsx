@@ -143,7 +143,7 @@ const Homedemopage = () => {
 
       
     {/* Blue overlay with nice transparency */}
-    <div className="absolute top-0 left-0 w-full h-screen bg-purple-50 -z-10 mix-blend-multiply"></div>
+    <div className="absolute top-0 left-0 w-full h-screen bg-[purple-50] -z-10 mix-blend-multiply"></div>
       
     <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-black to-transparent transform translate-y-40 z-20" />
     <main >
