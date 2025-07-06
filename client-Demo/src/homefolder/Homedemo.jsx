@@ -44,85 +44,78 @@ const Homedemopage = () => {
 
     
     const [isLoading, setIsLoading] = useState(true);
-    
+    const [videoLoaded, setVideoLoaded] = useState(false);
+    const [imagesLoaded, setImagesLoaded] = useState(false);
 
+    // Wait for all <img> tags in the DOM
     useEffect(() => {
       const images = Array.from(document.images);
-      const videos = Array.from(document.querySelectorAll("video"));
-
-      const imagePromises = images.map((img) => {
+      const promises = images.map((img) => {
         if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
         return new Promise((res) => {
           img.onload = res;
-          img.onerror = res;
+          img.onerror = res; // still resolve even if some images fail
         });
       });
 
-      const videoPromises = videos.map((video) => {
-        return new Promise((res) => {
-          if ('requestVideoFrameCallback' in video) {
-            // modern browsers
-            const check = () => {
-              video.requestVideoFrameCallback(() => res());
-            };
-            if (video.readyState >= 2) {
-              check();
-            } else {
-              video.onloadeddata = check;
-              video.onerror = res;
-            }
-          } else {
-            // fallback
-            if (video.readyState >= 2) return res();
-            video.onloadeddata = res;
-            video.onerror = res;
-          }
-        });
-      });
-
-      const waitForPaint = () =>
-        new Promise((res) => {
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => res());
-          });
-        });
-
-      const timeout = setTimeout(() => {
-        setIsLoading(false); // fallback
-      }, 8000);
-
-      Promise.all([...imagePromises, ...videoPromises])
-        .then(waitForPaint)
-        .then(() => {
-          clearTimeout(timeout);
-          setIsLoading(false);
-        });
-
-      return () => clearTimeout(timeout);
+      Promise.all(promises).then(() => setImagesLoaded(true));
     }, []);
 
+    // When both video and images are loaded (or timeout hits), hide loader
+    useEffect(() => {
+      const timeout = setTimeout(() => setIsLoading(false), 7000); // fallback
+      if (videoLoaded && imagesLoaded) {
+        clearTimeout(timeout);
+        setIsLoading(false);
+      }
+      return () => clearTimeout(timeout);
+    }, [videoLoaded, imagesLoaded]);
 
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+    const handleScroll = () => {
+        setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
 
 
     return(
       isLoading ? (
-            <div className="fixed inset-0 z-50 bg-black text-white flex items-center justify-center transition-opacity duration-700 opacity-100">
-          <section className="bg-black text-white min-h-screen w-full flex flex-col items-center justify-center">
+            
+            <section className="bg-black text-white min-h-screen w-full flex flex-col items-center justify-center">
+            
             <div className="mb-10">
-              <div className="flex text-purple-200 text-3xl lg:text-5xl font-bold cursor-pointer">
-                <img src={logo3} alt="Top Consultant" className="w-[150px] h-[150px] pr-2" />
-                <div className="flex flex-col justify-center">
+                <div className="flex text-purple-200 text-3xl lg:text-5xl font-bold cursor-pointer">
+                              
+                <img
+                src={logo3}
+                alt="Top Consultant"
+                className="w-[150px] h-[150px]   pr-2"
+                />
+    
+                <div className="flex flex-col  justify-center">
                   <h1 className="text-[35px] font-montserrat">SEEK ALPHA</h1>
                   <h2 className="text-[28px] font-cormorant">Consulting Agency</h2>
                 </div>
-              </div>
+    
+                </div>
             </div>
+            
             <div className="mb-10">
-              <div className="loader"></div>
+            
+            <div className="loader"></div> 
             </div>
-          </section>
-        </div>
+
+            
+            
+            </section>
+
+          
         ) : (
     <>
     <Header/>
@@ -137,6 +130,11 @@ const Homedemopage = () => {
       playsInline
       className="absolute top-0 left-0 w-full h-screen object-cover -z-10 transition-opacity duration-700"
       style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      onLoadedData={() => {
+        setTimeout(() => {
+          setVideoLoaded(true);
+        }, 200); // add a tiny delay to ensure video is painted
+      }}
 
     />
 
