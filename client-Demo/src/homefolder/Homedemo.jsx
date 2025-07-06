@@ -49,43 +49,68 @@ const Homedemopage = () => {
 
     // Wait for all <img> tags in the DOM
     useEffect(() => {
-      const images = Array.from(document.images);
-      const promises = images.map((img) => {
-        if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
-        return new Promise((res) => {
-          img.onload = res;
-          img.onerror = res; // still resolve even if some images fail
+      let resolved = false;
+
+      const waitForImages = () => {
+        const images = Array.from(document.images);
+        return Promise.all(
+          images.map((img) => {
+            if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
+            return new Promise((res) => {
+              img.onload = res;
+              img.onerror = res;
+            });
+          })
+        );
+      };
+
+      const waitForVideos = () => {
+        const videos = Array.from(document.querySelectorAll("video"));
+        return Promise.all(
+          videos.map((video) => {
+            if (video.readyState >= 3) return Promise.resolve();
+            return new Promise((res) => {
+              const onLoaded = () => {
+                video.removeEventListener("loadeddata", onLoaded);
+                res();
+              };
+              video.addEventListener("loadeddata", onLoaded);
+              video.addEventListener("error", res); // still resolve
+            });
+          })
+        );
+      };
+
+      const waitForPaint = () =>
+        new Promise((res) => {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              res(); // waits for two full frames
+            });
+          });
         });
-      });
 
-      Promise.all(promises).then(() => setImagesLoaded(true));
-    }, []);
+      const timeout = setTimeout(() => {
+        if (!resolved) setIsLoading(false); // fallback
+      }, 8000);
 
-    // When both video and images are loaded (or timeout hits), hide loader
-    useEffect(() => {
-      const timeout = setTimeout(() => setIsLoading(false), 7000); // fallback
-      if (videoLoaded && imagesLoaded) {
-        clearTimeout(timeout);
-        setIsLoading(false);
-      }
+      Promise.all([waitForImages(), waitForVideos()])
+        .then(() => waitForPaint()) // now wait until the DOM has painted
+        .then(() => {
+          resolved = true;
+          clearTimeout(timeout);
+          setIsLoading(false);
+        });
+
       return () => clearTimeout(timeout);
-    }, [videoLoaded, imagesLoaded]);
-
-
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-    const handleScroll = () => {
-        setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
 
 
 
     return(
       isLoading ? (
+            <div className={`fixed inset-0 z-50 bg-black text-white flex items-center justify-center transition-opacity duration-700 ${isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
             
             <section className="bg-black text-white min-h-screen w-full flex flex-col items-center justify-center">
             
@@ -115,7 +140,9 @@ const Homedemopage = () => {
             
             </section>
 
-          
+            {/* Loader content here */}
+            </div>
+
         ) : (
     <>
     <Header/>
