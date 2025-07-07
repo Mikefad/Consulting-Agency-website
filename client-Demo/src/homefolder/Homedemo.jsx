@@ -162,11 +162,11 @@ const Homedemopage = () => {
            transition={{ delay: 0.3, duration: 0.6 }}
            
           > 
-          <h1 className="text-purple-50 font-lg text-4xl sm:text-5xl md:text-[40px] leading-tight mb-7">
-            Find the right consultant for your project needs.
+          <h1 className="text-purple-50 font-lg text-4xl sm:text-5xl md:text-[40px] uppercase leading-tight mb-7">
+            Find the Right Consultant for your Project Needs.
           </h1>
 
-          <p className="text-purple-50 mb-8 text-lg sm:text-[13px] font-md uppercase tracking-wide">
+          <p className="text-purple-50 mb-14 sm:mb-10 text-[18px]  font-md  tracking-wide">
           Seek Alpha Consulting connects clients with vetted subject matter experts—Advisors—from our global professional network. 
           </p>
           </motion.div>
@@ -177,7 +177,7 @@ const Homedemopage = () => {
            transition={{ delay: 0.3, duration: 0.6 }}
            
           >
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-4 mb-5">
             <button className="border border-[#702963] hover:bg-blue-800 text-white font-semibold py-2 px-6 shadow transition-all duration-300">
               For Clients
             </button>
@@ -205,7 +205,7 @@ const Homedemopage = () => {
            initial={{ opacity: 0, x: -60 }}
            animate={{ opacity: 1, x: 0 }}
            transition={{ delay: 0.3, duration: 0.6 }}
-           className="w-full md:w-1/3  bg-[#702963] backdrop-blur-md p-8 rounded-2xl shadow-lg pt-15 "
+           className="w-full md:w-1/3  bg-[#702963] backdrop-blur-md p-8 rounded-2xl shadow-lg pt-25 sm:pt-15 "
           >
             <div className="text-[110px] font-bold text-black pb-10">
               <CountUp
@@ -251,7 +251,7 @@ const Homedemopage = () => {
               />
 
               <h3 className="text-xl text-purple-200 font-semibold mb-2">Right Section</h3>
-              <p className="text-purple-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus tenetur tempora molestias consequuntur, nam voluptate expedita culpa voluptatum provident. Dolores, architecto? Commodi esse quaerat vero eum quasi cum quod possimus.</p>
+              <p className="text-purple-100 text-[12px] sm:text-[15px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus tenetur tempora molestias consequuntur, nam voluptate expedita culpa voluptatum provident. Dolores, architecto? Commodi esse quaerat vero eum quasi cum quod possimus.</p>
           
               </div>
               
@@ -277,7 +277,7 @@ const Homedemopage = () => {
 
 
                 <h3 className="text-xl text-purple-200 font-semibold mb-2">Right Section</h3>
-                <p className="text-purple-100">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, obcaecati dignissimos possimus architecto doloremque praesentium adipisci laborum labore, quibusdam velit optio est quisquam molestias et. Nam veniam possimus ullam recusandae.</p>
+                <p className="text-purple-100 text-[12px] sm:text-[15px]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, obcaecati dignissimos possimus architecto doloremque praesentium adipisci laborum labore, quibusdam velit optio est quisquam molestias et. Nam veniam possimus ullam recusandae.</p>
             </div>
             </motion.div>
 
