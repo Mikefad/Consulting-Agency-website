@@ -38,7 +38,7 @@ return(
             initial="hidden"
             animate={isJourneyInView ? "visible" : "hidden"}
         >
-            <h2 className="text-4xl font-bold text-center text-[#702963] mb-12">Our Journey: Milestones of Growth</h2>
+            <h2 className="text-4xl font-bold text-center text-[#702963] mb-12">Client Success Stories</h2>
             <div className="relative border-l-4 border-[#702963] pl-8 md:pl-16 py-6">
                 {/* Timeline Item 1 */}
                 <motion.div
@@ -49,8 +49,8 @@ return(
                 >
                     <div className="absolute w-6 h-6 bg-[#702963] rounded-full -left-3 border-4 border-white"></div>
                     <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full ml-auto md:ml-0 md:w-3/4">
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">2010: Founding & Initial Vision</h3>
-                        <p className="text-gray-700">ℳdev Consulting was founded by Jane Doe with the aim of revolutionizing how businesses access high-level expertise.</p>
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">Global Retail Giant: Strategic Expansion</h3>
+                        <p className="text-gray-700">Helped a multinational retailer enter three new markets across Asia by designing a data-led expansion strategy, resulting in a 22% revenue growth within the first year.</p>
                     </div>
                 </motion.div>
 
@@ -63,8 +63,8 @@ return(
                 >
                     <div className="absolute w-6 h-6 bg-[#702963] rounded-full -left-3 border-4 border-white"></div>
                     <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full ml-auto md:ml-0 md:w-3/4">
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">2015: Expanding Global Network</h3>
-                        <p className="text-gray-700">Significant growth in our consultant network, reaching over 500 vetted experts across diverse industries and continents.</p>
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">Fintech Startup: Operational Optimization</h3>
+                        <p className="text-gray-700">Partnered with a fast-growing fintech to streamline internal workflows, reducing operational costs by 30% and improving delivery time by 40% within six months.</p>
                     </div>
                 </motion.div>
                 
@@ -84,8 +84,8 @@ return(
                 >
                     <div className="absolute w-6 h-6 bg-[#702963] rounded-full -left-3 border-4 border-white"></div>
                     <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full ml-auto md:ml-0 md:w-3/4">
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">2020: Launch of Digital Solutions Platform</h3>
-                        <p className="text-gray-700">Introduced our proprietary digital platform to streamline client-consultant matching and project management.</p>
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">Healthcare Group: Digital Transformation</h3>
+                        <p className="text-gray-700">Guided a regional healthcare group through a complete digital overhaul—launching a patient engagement platform that increased satisfaction scores by 45%.</p>
                     </div>
                 </motion.div>
 
@@ -98,8 +98,8 @@ return(
                 >
                     <div className="absolute w-6 h-6 bg-[#702963] rounded-full -left-3 border-4 border-white"></div>
                     <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 w-full ml-auto md:ml-0 md:w-3/4">
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">Present: Leading the Consulting Frontier</h3>
-                        <p className="text-gray-700">Continuously innovating and expanding our service offerings to remain at the forefront of consulting, adapting to future market needs.</p>
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">Government Agency: Policy Innovation Lab</h3>
+                        <p className="text-gray-700">Collaborated with a national government department to create a policy innovation lab, resulting in four new pilot programs addressing climate and digital equity.</p>
                     </div>
                 </motion.div>
             </div>

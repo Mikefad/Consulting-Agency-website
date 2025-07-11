@@ -251,61 +251,129 @@ const ServicesPage = () => {
         {/* Solutions Section */}
         <main className="py-20 bg-gray-50">
             <section className="max-w-7xl mx-auto px-4 lg:px-8 mb-20">
-
-            <motion.div
+                <motion.div
                 ref={solutionsRef}
                 variants={fadeIn}
                 initial="hidden"
                 animate={isSolutionsInView ? "visible" : "hidden"}
-            >
+                >
                 <h2 className="text-4xl font-bold text-center text-[#702963] mb-10">
-                Solutions Tailored for Your Success
+                    Business Insights & Perspectives
                 </h2>
                 <p className="text-lg text-gray-700 text-center max-w-4xl mx-auto mb-12">
-                At <strong>ℳdev Consulting</strong>, we offer a comprehensive suite of consulting services...
+                    Our editorial team and consultants share fresh thinking, practical frameworks, and field-tested perspectives on what it takes to lead and grow in today’s volatile business environment. Dive into our latest commentaries, thought pieces, and expert takes on the evolving future of business.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <img
-                    src={logo2} // Your transparent logo
+                    src={logo2}
                     alt="Background Logo Overlay"
-                    className="absolute  w-[130%] h-[130%] object-contain opacity-10 mix-blend-multiply pointer-events-none z-0"
+                    className="absolute w-[130%] h-[130%] object-contain opacity-10 mix-blend-multiply pointer-events-none z-0"
                     />
 
-                {[strategyConsulting, digitalTransformation, operationsExcellence, financialAdvisory, talentManagement, marketResearch].map((img, i) => (
+                    {[
+                    {
+                        title: "Rethinking Strategy in a Post-Digital World",
+                        description:
+                        "Why traditional strategy frameworks fall short—and how agile, adaptive thinking is redefining market leadership.",
+                        img: strategyConsulting,
+                    },
+                    {
+                        title: "Inside Digital Transformation: What No One Tells You",
+                        description:
+                        "A candid look at the cultural, technical, and leadership challenges that often stall digital change—and how to overcome them.",
+                        img: digitalTransformation,
+                    },
+                    {
+                        title: "From Efficiency to Resilience: The New Ops Playbook",
+                        description:
+                        "Operational excellence is evolving. Discover how organizations are building systems that bend without breaking.",
+                        img: operationsExcellence,
+                    },
+                    {
+                        title: "The Future of Finance: Beyond Numbers",
+                        description:
+                        "Today’s CFOs are growth architects, not just scorekeepers. Here’s how modern financial leadership is shaping competitive advantage.",
+                        img: financialAdvisory,
+                    },
+                    {
+                        title: "Leading Through Uncertainty: Talent in 2025",
+                        description:
+                        "How the best companies are nurturing talent, building leadership pipelines, and creating cultures that thrive amid disruption.",
+                        img: talentManagement,
+                    },
+                    {
+                        title: "What the Data Says: Emerging Market Trends for 2025",
+                        description:
+                        "From shifting consumer behavior to geopolitical shifts, we break down what the data is telling us about the year ahead.",
+                        img: marketResearch,
+                    },
+                    ].map((article, i) => (
                     <motion.div
-                    key={i}
-                    variants={cardVariants}
-                    initial="hidden"
-                    animate={isSolutionsInView ? "visible" : "hidden"}
-                    custom={i}
-                    className="relative z-10 bg-purple-50 p-8 rounded-lg shadow-md border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300"
+                        key={i}
+                        variants={cardVariants}
+                        initial="hidden"
+                        animate={isSolutionsInView ? "visible" : "hidden"}
+                        custom={i}
+                        className="relative z-10 bg-purple-50 p-8 rounded-lg shadow-md border border-gray-200 text-center hover:shadow-xl transition-shadow duration-300"
                     >
-                    <img src={img} alt="Service" className="w-full h-48 object-cover rounded-md mb-6" />
-                    <h3 className="text-2xl font-semibold mb-3 text-[#702963]">Service Title {i + 1}</h3>
-                    <p className="text-gray-600">Service description goes here for offering {i + 1}.</p>
+                        <img
+                        src={article.img}
+                        alt={article.title}
+                        className="w-full h-48 object-cover rounded-md mb-6"
+                        />
+                        <h3 className="text-2xl font-semibold mb-3 text-[#702963]">
+                        {article.title}
+                        </h3>
+                        <p className="text-gray-600">{article.description}</p>
+                        <a href="#" className="text-blue-600 hover:underline block mt-4">Read more →</a>
                     </motion.div>
-                ))}
+                    ))}
                 </div>
-            </motion.div>
+                </motion.div>
             </section>
 
-            {/* Blog Section */}
-            <section className="max-w-7xl mx-auto px-4 lg:px-8 mb-20">
+          <section className="max-w-7xl mx-auto px-4 lg:px-8 mb-20">
             <h2 className="text-4xl font-bold text-center text-[#702963] mb-10">Latest Insights</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {[1, 2, 3].map((i) => (
-                <div key={i} className="bg-purple-50 rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6">
-                    <img src={teamPhoto} alt={`Blog ${i}`} className="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 className="text-xl font-semibold text-[#702963] mb-2">Blog Title {i}</h3>
-                    <p className="text-gray-600 mb-4">Brief description of blog post {i}. Learn about strategies and trends in consulting.</p>
-                    <a href="#" className="text-blue-600 hover:underline">Read more →</a>
+            {[
+                {
+                title: "Winning with Strategy: Lessons from Disruptive Brands",
+                excerpt:
+                    "Explore how forward-thinking businesses leverage strategy consulting to reshape industries and outpace competitors in today's fast-moving landscape.",
+                },
+                {
+                title: "Why Operational Agility Is the New Competitive Edge",
+                excerpt:
+                    "In a world of constant change, organizations that optimize workflows and adapt rapidly are the ones that thrive. Here’s how to become one of them.",
+                },
+                {
+                title: "Data-Driven Growth: Harnessing Market Insights That Matter",
+                excerpt:
+                    "Gone are the days of guesswork. Learn how deep market research and intelligent analytics are helping leaders make smarter decisions—faster.",
+                },
+            ].map((blog, i) => (
+                <div
+                key={i}
+                className="bg-purple-50 rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6"
+                >
+                <img
+                    src={teamPhoto}
+                    alt={`Blog ${i}`}
+                    className="w-full h-48 object-cover rounded-md mb-4"
+                />
+                <h3 className="text-xl font-semibold text-[#702963] mb-2">{blog.title}</h3>
+                <p className="text-gray-600 mb-4">{blog.excerpt}</p>
+                <a href="#" className="text-blue-600 hover:underline">
+                    Read more →
+                </a>
                 </div>
-                ))}
+            ))}
             </div>
-            </section>
-            
+        </section>
         </main>
+
+
         <Footer/>
         </div>
         </div>

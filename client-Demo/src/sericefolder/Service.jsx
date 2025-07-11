@@ -343,14 +343,14 @@ const AboutUsPage = () => {
                         initial="hidden"
                         animate={isMissionInView ? "visible" : "hidden"}
                     >
-                        <h2 className="text-4xl font-bold text-center text-[#702963] mb-10">Our Story & Mission</h2>
+                        <h2 className="text-4xl font-bold text-center text-[#702963] mb-10">What We Do</h2>
                         <div className="flex flex-col md:flex-row items-center gap-12">
                             <div className="md:w-1/2">
                                 <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                                    At **ℳdev Consulting**, we believe in the transformative power of expert knowledge. Established with a clear vision to bridge the gap between complex business challenges and specialized, actionable solutions, we have meticulously built a reputation as a leading platform. We connect discerning clients with an unparalleled global network of vetted subject matter experts, enabling them to navigate complex landscapes with clarity and confidence.
+                                    At <strong>Seek Alpha Consulting</strong>, we provide tailored business solutions across strategy, operations, and transformation. Our experts work closely with you to identify challenges, uncover opportunities, and deliver actionable strategies that drive measurable results.
                                 </p>
                                 <p className="text-lg text-gray-700 leading-relaxed">
-                                    Our mission is singularly focused: to empower organizations by providing precise, timely, and actionable insights. We are deeply committed to fostering innovation, accelerating sustainable growth, and ensuring that every one of our clients not only meets but consistently exceeds their strategic objectives. We are your partners in achieving enduring success.
+                                    Whether you're launching a new initiative, navigating change, or optimizing performance — our consulting services are built to support your success at every stage. We don’t just advise — we execute alongside you.
                                 </p>
                             </div>
                             <div className="md:w-1/2">

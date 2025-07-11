@@ -38,30 +38,60 @@ return(
                         initial="hidden"
                         animate={isDifferentiatingInView ? "visible" : "hidden"}
                     >
-                        <h2 className="text-4xl font-bold text-center text-[#702963] mb-10">What Makes Us Different</h2>
+                        <h2 className="text-4xl font-bold text-center text-[#702963] mb-10">Our Core Services</h2>
                         <div className="flex flex-col md:flex-row items-center gap-12">
                             <div className="md:w-1/2 order-2 md:order-1">
-                                <ul className="list-disc text-[18px] pl-6 space-y-4">
-                                    <motion.li variants={listItemVariants} initial="hidden" animate={isDifferentiatingInView ? "visible" : "hidden"} custom={0} className="text-gray-700">
-                                        <strong className="text-gray-900">Global Network, Local Expertise:</strong> Our extensive network spans the globe, ensuring you have access to diverse perspectives and specialized knowledge, no matter your industry or location.
-                                    </motion.li>
-                                    <motion.li variants={listItemVariants} initial="hidden" animate={isDifferentiatingInView ? "visible" : "hidden"} custom={1} className="text-gray-700">
-                                        <strong className="text-gray-900">Rigorous Vetting Process:</strong> Every consultant on our platform undergoes a meticulous vetting process, guaranteeing not just expertise, but also a proven track record of successful engagements.
-                                    </motion.li>
+                              
+                            <ul className="list-disc text-[18px] pl-6 space-y-4">
+                            <motion.li
+                                variants={listItemVariants}
+                                initial="hidden"
+                                animate={isDifferentiatingInView ? "visible" : "hidden"}
+                                custom={0}
+                                className="text-gray-700"
+                            >
+                                <strong>Strategy Consulting:</strong> We help organizations define clear strategic goals and navigate market complexities through tailored growth planning, market entry analysis, and competitive positioning—backed by actionable roadmaps that align vision with long-term execution.
+                            </motion.li>
 
-                                    <img
-                                    src={logo} // Your transparent logo
-                                    alt="Background Logo Overlay"
-                                    className="absolute  w-full h-full object-contain opacity-10 mix-blend-multiply pointer-events-none z-10 transform -translate-x-120 -translate-y-170"
-                                    />
+                            <motion.li
+                                variants={listItemVariants}
+                                initial="hidden"
+                                animate={isDifferentiatingInView ? "visible" : "hidden"}
+                                custom={1}
+                                className="text-gray-700"
+                            >
+                                <strong>Operational Excellence:</strong> Our team works to identify inefficiencies, streamline workflows, and implement cost-saving initiatives that enhance agility, scalability, and business performance at every level of the organization.
+                            </motion.li>
 
-                                    <motion.li variants={listItemVariants} initial="hidden" animate={isDifferentiatingInView ? "visible" : "hidden"} custom={2} className="text-gray-700">
-                                        <strong className="text-gray-900">Client-Centric Matching:</strong> We go beyond keywords. Our dedicated team personally understands your project nuances to provide a truly tailored match, ensuring alignment in skills, culture, and goals.
-                                    </motion.li>
-                                    <motion.li variants={listItemVariants} initial="hidden" animate={isDifferentiatingInView ? "visible" : "hidden"} custom={3} className="text-gray-700">
-                                        <strong className="text-gray-900">Seamless Collaboration Tools:</strong> We provide intuitive platforms and support to facilitate smooth communication, project management, and knowledge transfer between clients and consultants.
-                                    </motion.li>
-                                </ul>
+                            <img
+                                src={logo} // Your transparent logo
+                                alt="Background Logo Overlay"
+                                className="absolute w-full h-full object-contain opacity-10 mix-blend-multiply pointer-events-none z-10 transform -translate-x-120 -translate-y-170"
+                            />
+
+                            <motion.li
+                                variants={listItemVariants}
+                                initial="hidden"
+                                animate={isDifferentiatingInView ? "visible" : "hidden"}
+                                custom={2}
+                                className="text-gray-700"
+                            >
+                                <strong>Change & Transformation:</strong> We lead digital and organizational transformation efforts that empower businesses to embrace innovation, realign culture, and adapt seamlessly to evolving market conditions with resilience and confidence.
+                            </motion.li>
+
+                            <motion.li
+                                variants={listItemVariants}
+                                initial="hidden"
+                                animate={isDifferentiatingInView ? "visible" : "hidden"}
+                                custom={3}
+                                className="text-gray-700"
+                            >
+                                <strong>Market Research & Insights:</strong> We deliver in-depth industry and consumer research—combining qualitative and quantitative data—to uncover opportunities, mitigate risk, and drive smarter, insight-led business decisions.
+                            </motion.li>
+                            </ul>
+
+
+
                             </div>
                             <div className="md:w-1/2 order-1 md:order-2">
                                 <img src={quality} alt="What Makes Us Different" className="rounded-xl shadow-lg w-full h-auto object-cover" />

@@ -39,25 +39,28 @@ return(
                         initial="hidden"
                         animate={isValuesInView ? "visible" : "hidden"}
                     >
-                        <h2 className="text-4xl font-bold text-center text-[#702963] mb-10">Our Core Values</h2>
+                        <h2 className="text-4xl font-bold text-center text-[#702963] mb-10">Our Approach</h2>
+                        <p className="text-lg text-gray-700 text-center">
+                        Our services are anchored in deep analysis, strategic clarity, and close collaboration. We align our consulting approach with your vision and execution needs.
+                        </p>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <motion.div variants={cardVariants} initial="hidden" animate={isValuesInView ? "visible" : "hidden"} custom={0}
                                 className="bg-purple-50 p-8 rounded-lg shadow-md border border-gray-200 text-center">
                                 <img src={medal} alt="Excellence" className="w-[60px] h-[60px] mx-auto mb-4 filter hue-rotate-[270deg] saturate-[150%]" />
-                                <h3 className="text-2xl font-semibold mb-3 text-gray-900">Excellence</h3>
-                                <p className="text-gray-600">We are dedicated to delivering the highest quality of service and expertise, consistently setting new benchmarks in every client engagement.</p>
+                                <h3 className="text-2xl font-semibold mb-3 text-gray-900">Insight-Driven</h3>
+                                <p className="text-gray-600">We combine data, market research, and experience to shape winning strategies.</p>
                             </motion.div>
                             <motion.div variants={cardVariants} initial="hidden" animate={isValuesInView ? "visible" : "hidden"} custom={1}
                                 className="bg-purple-50 p-8 rounded-lg shadow-md border border-gray-200 text-center">
                                 <img src={thumbsup} alt="Integrity" className="w-[60px] h-[60px] mx-auto mb-4 filter hue-rotate-[270deg] saturate-[150%]" />
-                                <h3 className="text-2xl font-semibold mb-3 text-gray-900">Integrity</h3>
-                                <p className="text-gray-600">Operating with unwavering honesty, transparency, and ethical conduct forms the foundation of all our relationships and decisions.</p>
+                                <h3 className="text-2xl font-semibold mb-3 text-gray-900">Hands-On </h3>
+                                <p className="text-gray-600">Our consultants don’t just recommend — they build, guide, and deliver with your team.</p>
                             </motion.div>
                             <motion.div variants={cardVariants} initial="hidden" animate={isValuesInView ? "visible" : "hidden"} custom={2}
                                 className="bg-purple-50 p-8 rounded-lg shadow-md border border-gray-200 text-center">
                                 <img src={shuttle} alt="Innovation" className="w-[60px] h-[60px] mx-auto mb-4 filter hue-rotate-[270deg] saturate-[150%]" />
-                                <h3 className="text-2xl font-semibold mb-3 text-gray-900">Innovation</h3>
-                                <p className="text-gray-600">We continuously seek and embrace new approaches, cutting-edge solutions, and creative thinking to address evolving challenges and drive future success.</p>
+                                <h3 className="text-2xl font-semibold mb-3 text-gray-900">ROI-Focused </h3>
+                                <p className="text-gray-600">We define success by outcomes that move your business forward.</p>
                             </motion.div>
                         </div>
                     </motion.div>
